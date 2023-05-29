@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/src/styles.css">
+    <link href="/src/styles.css" rel="stylesheet">
     <title>To Do List</title>
 </head>
 <body>
     <header class="flex justify-center">
         <h1 class="text-orange-500">To Do List</h1>
     </header>
+    <!--Side Bar-->
     <nav class="nav-bar">
         <ul>
             <li>Home</li>
@@ -19,7 +20,29 @@
             <li>This Month</li>
         </ul>
     </nav>
-    <div class="modal"></div>
-    <script src="index.js"></script>
+    <!--Main/Button-->
+    <section>
+        <button>ADD TO-DO</button>
+    </section>
+    <!--Modal Form-->
+    <section class="modal hidden">
+        <div class="modalContainer">
+            <h2>Add New To-Do</h2>
+            <form action="">
+                <fieldset>
+                    <label for="project">Project Name: </label>
+                    <input type="text" name="" id="project" required>
+                </fieldset>
+                <fieldset>
+                    <label for="date">Due Date: </label>
+                    <input type="date" id="date" required>
+                </fieldset>
+                <div class="buttonContainer">
+                    <button>Add Project</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script src="main.js"></script>
 </body>
 </html>

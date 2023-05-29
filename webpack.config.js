@@ -1,29 +1,29 @@
-const path = require("path");
+const path = require('path')
 
 module.exports = {
-    entry: './src/index.js',
-    output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'main.js'
+  mode: 'development',
+  entry: './src/index.js',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
+  },
+  devServer: {
+    static: {
+      directory: path.resolve(__dirname, 'dist'),
     },
-
-    module: {
-        rules: [
-            {
-                test:/\.css$/,
-                use:[
-                    'style-loader',
-                    {
-                        loader: 'css-loader', options: { importLoaders: 1}
-                    },
-                    'postcss-loader'
-                ]
-            }
-        ]
-    },
-    devServer: {
-        watchContentBase: true,
-        contentBase: path.resolve(__dirname, 'dist'),
-        open: true
-    }
-};
+    port: 3000,
+    open: true,
+    hot: true,
+    compress: true,
+    historyApiFallback: true,
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        include: path.resolve(__dirname, 'src'),
+        use: ['style-loader', 'css-loader', 'postcss-loader'],
+      },
+    ],
+  },
+}
