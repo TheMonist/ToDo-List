@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/src/styles.css" rel="stylesheet">
+    <link href="./src/styles.css" rel="stylesheet" type="text/html">
     <title>To Do List</title>
 </head>
 <body>
@@ -20,29 +20,44 @@
             <li>This Month</li>
         </ul>
     </nav>
-    <!--Main/Button-->
-    <section>
-        <button>ADD TO-DO</button>
-    </section>
     <!--Modal Form-->
     <section class="modal hidden">
+        <div class="flex items-end">
+            <button class="modalClose">⨉</button>
+        </div>
         <div class="modalContainer">
             <h2>Add New To-Do</h2>
             <form action="">
-                <fieldset>
-                    <label for="project">Project Name: </label>
+                <div>
+                    <label for="title">Title: </label>
                     <input type="text" name="" id="project" required>
-                </fieldset>
-                <fieldset>
+                </div>
+                <div>
+                    <label for="description">Description: </label>
+                    <input type="text" id="description">
+                </div>
+                <div>
                     <label for="date">Due Date: </label>
                     <input type="date" id="date" required>
-                </fieldset>
+                </div>
+                <div>
+                    <label for="priority">Priority: </label>
+                    <input type="text" id="priority">
+                </div>
                 <div class="buttonContainer">
-                    <button>Add Project</button>
+                    <button id="addToDo">Add Project</button>
                 </div>
             </form>
         </div>
     </section>
+    <div class="overlay hidden"></div>
+    <!--Body Container-->
+    <div></div>
+    <!--Main/Button-->
+    <section>
+        <button id="modalOpen">ADD TO-DO</button>
+    </section>
+    
     <script src="main.js"></script>
 </body>
 </html>
