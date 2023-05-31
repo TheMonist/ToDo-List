@@ -1,9 +1,9 @@
 import {todoList} from "./src/todo.js";
 
-let modal = document.querySelector("#modal");
-let modalOpen = document.querySelector(".modalOpen");
-let modalClose = document.querySelector(".modalClose");
-let addToDo = document.querySelector(".addToDo");
+let modal = document.querySelector(".modal");
+let modalOpen = document.querySelector("#modalOpen");
+let modalClose = document.querySelector("#modalClose");
+let addToDo = document.querySelector("#addToDo");
 
 //create
 //read
