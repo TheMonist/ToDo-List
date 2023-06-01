@@ -9,10 +9,10 @@
 </head>
 <body>
     <header class="flex justify-center">
-        <h1 class="text-orange-500">To Do List</h1>
+        <h1 class="text-orange-500 text-2xl">To Do List</h1>
     </header>
     <!--Side Bar-->
-    <nav class="nav-bar bg-indigo-500">
+    <nav class="nav-bar bg-indigo-500 flex justify-between items-start fixed m-0 h-full w-96 top-0 left-0 overflow-hidden pl-5">
         <ul>
             <li>Home</li>
             <li>Today</li>
@@ -23,7 +23,7 @@
     <!--Modal Form-->
     <section class="modal hidden">
         <div class="flex items-end">
-            <button class="modalClose">⨉</button>
+            <button id="modalClose">⨉</button>
         </div>
         <div class="modalContainer">
             <h2>Add New To-Do</h2>
@@ -55,7 +55,7 @@
     <div></div>
     <!--Main/Button-->
     <section class="flex justify-center bg-indigo-500">
-        <button type="button" class="">ADD TO-DO</button>
+        <button type="button" id="modalOpen" class="rounded-full bg-purple-700 text-white">ADD TO-DO</button>
     </section>
     
     <script src="main.js"></script>
