@@ -12,7 +12,7 @@
         <h1 class="text-orange-500 text-2xl">To Do List</h1>
     </header>
     <!--Side Bar-->
-    <nav class="nav-bar bg-indigo-500 flex justify-between items-start fixed m-0 h-full w-96 top-0 left-0 overflow-hidden pl-5">
+    <nav class="nav-bar bg-indigo-500 flex justify-between items-start fixed m-0 h-full w-56 top-0 left-0 overflow-hidden pl-5">
         <ul>
             <li>Home</li>
             <li>Today</li>
@@ -20,44 +20,38 @@
             <li>This Month</li>
         </ul>
     </nav>
-    <!--Modal Form-->
-    <section class="modal hidden">
-        <div class="flex items-end">
-            <button id="modalClose">⨉</button>
+    <div class="flex items-center justify-center h-screen">
+        <button class="bg-purple-700 text-white rounded-md px-8 py-2 text-base font-medium hover:bg-purple-500 focus:outline-none focus:ring-2 focus:ring-blue-300" id="modalOpen">ADD TODO</button>
+    </div>
+    <!--Overlay Effect-->
+    <div class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full" id="overlay"></div>
+    <!--modal content-->
+    <div class="hidden fixed z-0 inset-10 w-1/2 justify-center shadow-lg rounded-none bg-white" id="modal">
+        <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+            <h3 class="text-lg leading-6 font-medium text-gray-900">Add Project</h3>
+            <div class="mt-2 px-7 py-3">
+                <label for="title">Title: </label>
+                <input type="text" class="w-full bg-gray-100 p-2 mt-2 mb-3" id="title"/>
+                <label for="description">Description: </label>
+                <input type="text" class="w-full bg-gray-100 p-2 mt-2 mb-3" id="description" />
+                <label for="date">Due Date: </label>
+                <input type="text" class="w-full bg-gray-100 p-2 mt-2 mb-3" id="date" />
+                <legend>Priority: </legend>
+                    <div class="flex justify-center">
+                        <label for="high">High</label>
+                        <input type="radio" class="w-full bg-gray-100 p-2 mt-2 mb-3" id="high" value="high" /> 
+                        <label for="medium">Medium</label>
+                        <input type="radio" class="w-full bg-gray-100 p-2 mt-2 mb-3" id="medium" value="medium" /> 
+                        <label for="low">Low</label>
+                        <input type="radio" class="w-full bg-gray-100 p-2 mt-2 mb-3" id="low" value="low" />
+                    </div>
+            </div>
+            <div class="flex justify-between px-4 py-3">
+                <button id="addToDo" class="px-4 py-2 bg-green-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300 mr-2"> Create </button>
+                <button id="modalClose" class="px-4 py-2 bg-red-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-300 mr-2"> Delete </button>
+            </div>
         </div>
-        <div class="modalContainer">
-            <h2>Add New To-Do</h2>
-            <form action="">
-                <div>
-                    <label for="title">Title: </label>
-                    <input type="text" name="" id="title" required>
-                </div>
-                <div>
-                    <label for="description">Description: </label>
-                    <input type="text" id="description">
-                </div>
-                <div>
-                    <label for="date">Due Date: </label>
-                    <input type="date" id="date" required>
-                </div>
-                <div>
-                    <label for="priority">Priority: </label>
-                    <input type="text" id="priority">
-                </div>
-                <div class="buttonContainer">
-                    <button id="addToDo">Add Project</button>
-                </div>
-            </form>
-        </div>
-    </section>
-    <div class="overlay hidden"></div>
-    <!--Body Container-->
-    <div></div>
-    <!--Main/Button-->
-    <section class="flex justify-center bg-indigo-500">
-        <button type="button" id="modalOpen" class="rounded-full bg-purple-700 text-white">ADD TO-DO</button>
-    </section>
-    
+    </div>
     <script src="main.js"></script>
 </body>
 </html>
