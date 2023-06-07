@@ -12,7 +12,7 @@
         <h1 class="text-orange-500 text-2xl">To Do List</h1>
     </header>
     <!--Side Bar-->
-    <nav class="nav-bar bg-indigo-500 flex justify-between items-start fixed m-0 h-full w-56 top-0 left-0 overflow-hidden pl-5">
+    <nav class="nav-bar bg-gradient-to-r from-purple-700 to-indigo-500 flex justify-between items-start fixed m-0 h-full w-56 top-0 left-0 overflow-auto pl-5 text-lg text-white">
         <ul>
             <li>Home</li>
             <li>Today</li>
@@ -26,7 +26,7 @@
     <!--Overlay Effect-->
     <div class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full" id="overlay"></div>
     <!--modal content-->
-    <div class="hidden fixed z-0 inset-10 w-1/2 justify-center shadow-lg rounded-none bg-white" id="modal">
+    <div class="hidden fixed z-0 inset-10 w-1/2 shadow-lg rounded-none bg-white" id="modal">
         <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
             <h3 class="text-lg leading-6 font-medium text-gray-900">Add Project</h3>
             <div class="mt-2 px-7 py-3">
@@ -37,13 +37,19 @@
                 <label for="date">Due Date: </label>
                 <input type="text" class="w-full bg-gray-100 p-2 mt-2 mb-3" id="date" />
                 <legend>Priority: </legend>
-                    <div class="flex justify-center">
-                        <label for="high">High</label>
-                        <input type="radio" class="w-full bg-gray-100 p-2 mt-2 mb-3" id="high" value="high" /> 
-                        <label for="medium">Medium</label>
-                        <input type="radio" class="w-full bg-gray-100 p-2 mt-2 mb-3" id="medium" value="medium" /> 
-                        <label for="low">Low</label>
-                        <input type="radio" class="w-full bg-gray-100 p-2 mt-2 mb-3" id="low" value="low" />
+                    <div class="grid grid-cols-3 gap-1">
+                        <div>
+                            <input type="radio" id="high" value="high" class="hidden" name="priority" checked />
+                            <label for="high" class="flex flex-col p-4 border-2 border-gray-400 rounded-md cursor-pointer">High</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="medium" value="medium" class="hidden" name="priority" />
+                            <label for="medium" class="flex flex-col p-4 border-2 border-gray-400 rounded-md cursor-pointer">Medium</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="low" value="low" class="hidden" name="priority" />
+                            <label for="low" class="flex flex-col p-4 border-2 border-gray-400 rounded-md cursor-pointer">Low</label>
+                        </div>
                     </div>
             </div>
             <div class="flex justify-between px-4 py-3">
