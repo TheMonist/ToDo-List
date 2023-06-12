@@ -1,5 +1,5 @@
-import {todoList} from "./todo.js";
-import {projectFactory, addProject, getProjects, getProjectByName, projectExistence} from "./project.js"
+import {ToDoFactory} from "./todo.js";
+import {ProjectFactory, doesProjectNameExist, addProject, getProjects, getProjectByName} from "./project.js"
 import {format, isToday, isWithinInterval, subDays} from "date-fns";
 
 const modal = document.querySelector("#modal");
@@ -25,9 +25,27 @@ function handleInput() {
   let dateData = document.querySelector("#date").value;
   let priorityData = document.querySelector("#priority").value;
 
-  let newToDo = new ToDoList(titleData, descriptionData, dateData, priorityData);
+  let newToDo = new ToDoFactory(titleData, descriptionData, dateData, priorityData);
+  let project;
+  if (!doesProjectNameExist(projectData.value)) {
+    project = ProjectFactory(titleData.value);
+    project.addTodo(newToDo);
+    addProject(project);
+  }
+  else {
+    project = getProjectByName(titleData.value);
+    project.addToDo(newToDo);
+  }
+  renderProjects(getProjects);
+  //displayProjectTodos(project);
 };
+
 //create
+function renderProjects(projects) {
+  projects.forEach((project) => {
+    createToDo(project);
+  })
+}
 
 //read
 
@@ -72,8 +90,19 @@ function createToDo() {
 };
 
 //delete
-
+function clearContent(container) {
+  while(container.hasChildNodes()){
+    container.remove(container.firstChild);
+  }
+}
 //eventlisteners
 modalOpen.addEventListener("click", openModal);
 modalClose.addEventListener("click", closeModal);
 overlay.addEventListener("click", closeModal);
+addToDo.addEventListener("submit", (e) => {
+  e.preventDefault();
+  handleInput();
+  console.log("This button works!")
+});
+
+export {renderProjects}

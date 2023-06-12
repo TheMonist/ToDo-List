@@ -1,4 +1,4 @@
 import "./styles.css";
-import "./domHandler.js";
-import{ToDoList} from "./todo.js";
-import { compareAsc, format } from 'date-fns';
+import {renderProjects} from "./domHandler.js";
+import{ToDoFactory} from "./todo.js";
+import { compareAsc, format } from "date-fns";

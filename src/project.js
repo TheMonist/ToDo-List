@@ -1,11 +1,11 @@
 const projects = [];
 const projectNames = new Set();
 
-function projectFactory(projectName) {
-    let numTodos = 0;
+function ProjectFactory(projectName) {
+    let numOfTodos = 0;
     let todoList = [];
 
-    function pushTodo(todo) {
+    function addTodo(todo) {
         todoList.push(todo);
     };
 
@@ -22,8 +22,8 @@ function projectFactory(projectName) {
 
     return {
         projectName,
-        numTodos,
-        pushTodo,
+        numOfTodos,
+        addTodo,
         deleteTodo,
     }
 };
@@ -37,21 +37,21 @@ function getProjects() {
 }
 
 function getProjectByName(name) {
-    let projectReturn;
+    let projectToReturn;
     projects.forEach((project) => {
         if (project.projectName === name) {
-            projectReturn = project;
+            projectToReturn = project;
         }
     })
-    return projectReturn
+    return projectToReturn
 }
 
-function projectExistence(projectName) {
+function doesProjectNameExist(projectName) {
     return projectNames.has(projectName);
 }
 
-export {projectFactory,
+export {ProjectFactory,
     addProject,
     getProjects,
     getProjectByName,
-    projectExistence};
+    doesProjectNameExist};

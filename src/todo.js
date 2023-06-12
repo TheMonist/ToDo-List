@@ -1,4 +1,4 @@
-const ToDoList = (title, description, dueDate, priority) => {
+const ToDoFactory = (title, description, dueDate, priority) => {
     return  {
         title,
         description,
@@ -7,4 +7,4 @@ const ToDoList = (title, description, dueDate, priority) => {
     }
 };
 
-export {ToDoList}
+export {ToDoFactory}
