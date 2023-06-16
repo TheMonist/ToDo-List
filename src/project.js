@@ -50,8 +50,10 @@ function doesProjectNameExist(projectName) {
     return projectNames.has(projectName);
 }
 
-export {ProjectFactory,
+export {
+    ProjectFactory,
     addProject,
     getProjects,
     getProjectByName,
-    doesProjectNameExist};
+    doesProjectNameExist 
+};
